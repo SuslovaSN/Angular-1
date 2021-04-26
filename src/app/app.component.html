@@ -1,0 +1,25 @@
+
+<table class="table">
+  <thead>
+    <tr>
+      <th>Фамилия</th>
+      <th>Имя</th>
+      <th>Отчество</th>
+      <th>Дата рождения</th>
+      <th>Средний балл</th>
+      <th>Действие</th>
+    </tr>
+  </thead>
+  <tbody>
+       <tr *ngFor="let student of students" [ngClass]="{loserRow: (student.grade < 3), clear: !resetLusers}"> 
+        <td>{{ student.surname }}</td>
+        <td>{{ student.name }}</td>
+        <td>{{ student.middleName }}</td>
+        <td>{{ student.birthdayDate }}</td>
+        <td>{{ student.grade }}</td>
+        <td><button>Удалить</button></td>
+    </tr>
+  </tbody>
+</table>
+
+<button (click)="resetLusers = !resetLusers">Выключить</button>
